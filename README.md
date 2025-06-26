@@ -1,69 +1,112 @@
 # Lista de Tarefas Simples
 
-Este é um projeto simples de Lista de Tarefas, onde os usuários podem adicionar, marcar como concluídas e apagar tarefas. A aplicação foi originalmente construída para se comunicar com um backend API, mas também está disponível em uma versão que utiliza localStorage para armazenamento local dos dados. 
+Uma aplicação web frontend leve e intuitiva para gerenciar tarefas pessoais, construída com HTML, CSS e JavaScript. Utiliza localStorage para persistência local e oferece uma interface amigável com temas claro e escuro. Este projeto é ideal para aprendizado ou uso em ambientes onde não há necessidade de um backend.
 
 ## Demonstração
 
-Você pode acessar a versão funcional hospedada da aplicação em [lista-de-tarefas-simples.vercel.app](https://lista-de-tarefas-simples.vercel.app/).
+Confira a versão hospedada em [https://todolist-marcelomd-projects.vercel.app](https://todolist-marcelomd-projects.vercel.app).
 
 ![Lista de Tarefas](./assets/frontend.png)
 
 ## Funcionalidades
 
-- Adicionar nova tarefa
-- Marcar uma tarefa como **Feita**
-- Apagar uma tarefa
-- Filtrar tarefas por texto
-- Alternar entre os modos **Claro** e **Escuro** clicando no título
+- **Adicionar tarefas**: Insira novas tarefas com um clique.
+- **Marcar como feita**: Altere o status das tarefas com facilidade.
+- **Apagar tarefas**: Remova tarefas indesejadas rapidamente.
+- **Filtrar tarefas**: Busque tarefas por texto no campo de filtro.
+- **Alternar temas**: Troque entre modos claro e escuro clicando no título.
+- **Persistência local**: Armazena dados usando `localStorage` do navegador.
 
----
+## Estrutura do Projeto
 
-## Executar Localmente
+```text
+/javascript_to_do_list_frontend
+├── /assets
+│   └── frontend.png
+├── /src    
+│   ├── /public
+│   │     ├── index.html
+│   │     ├── script.js
+│   │     └── style.css
+│   └── index.js          
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
+
+## Instalação e execução
 
 Para rodar o projeto localmente, siga os passos:
 
-1. Clone o repositório:
-   ```
-   git clone https://github.com/sergiocabral/Sample.JavaScript.TodoList.Frontend
+1. **Clone o repositório**:
+
+   ```bash
+   git clone https://github.com/marcelomduarte/javascript_to_do_list_frontend.git
    ```
 
-2. Instale as dependências:
+2. **Acesse o diretório**:
+
+   ```bash
+   cd javascript_to_do_list_frontend
    ```
+
+3. **Instale as dependências**:
+
+   ```bash
    npm install
    ```
 
-3. Inicie a aplicação:
-   ```
+4. **Inicie a aplicação**:
+
+   ```bash
    npm start
    ```
 
-O aplicativo será iniciado no navegador em `http://localhost:8080`.
+5. **Acesse em**: `http://localhost:8080`.
 
 ## Backend (opcional)
 
-Originalmente, este projeto se comunicava com uma API RESTful, que pode ser acessada em [github.com/sergiocabral/Sample.JavaScript.TodoList.Backend](https://github.com/sergiocabral/Sample.JavaScript.TodoList.Backend).
+Originalmente, este projeto frontend foi projetado para se comunicar com uma API RESTful. O repositório do backend está disponível em [https://github.com/marcelomduarte/javascript_to_do_list_backend](https://github.com/marcelomduarte/javascript_to_do_list_backend). Se desejar usar o backend em vez do localStorage do navegador, siga os passos abaixo.
 
-Para usar o backend, após o clone do repositório, volte um commit para trás. Dessa forma será usado a API ao invés do localStorage do navegador.
+### Reverter o frontend para usar a API
 
-```
-git reset --hard HEAD~1
-```
+Para restaurar a versão do frontend que se conecta ao backend (em vez de usar `localStorage`), volte dois commits no repositório do frontend após o clone:
 
-Para executar o backend localmente:
-
-1. Clone o repositório backend:
-   ```
-   git clone https://github.com/sergiocabral/Sample.JavaScript.TodoList.Backend
+   ```bash
+   git reset --hard HEAD~2
    ```
 
-2. Instale as dependências:
+- **Nota**: Este comando reverte o frontend para um estado anterior onde ele estava configurado para se comunicar com a API de Tarefas
+
+### Configurar e executar o backend localmente
+
+1. **Clone o repositório do backend**:
+
+   ```bash
+   git clone https://github.com/marcelomduarte/javascript_to_do_list_backend.git
    ```
+
+2. **Acesse o diretório do backend**:
+
+   ```bash
+   cd javascript_to_do_list_backend
+   ```
+
+3. **Instale as dependências do backend**:
+
+   ```bash
    npm install
    ```
 
-3. Inicie o servidor:
-   ```
+4. **Inicie o servidor do backend**:
+
+   ```bash
    npm start
    ```
 
-O backend será executado em `http://localhost:3000` e a aplicação frontend irá se comunicar diretamente com ele. As rotas da API estão documentadas na página do GitHub do backend.
+### Integração
+
+- Após iniciar o backend, o frontend (revertido com `git reset`) automaticamente se conectará à API em `http://localhost:3000`.
+
+- Consulte o `README.md` no repositório do backend ([https://github.com/marcelomduarte/javascript_to_do_list_backend](https://github.com/marcelomduarte/javascript_to_do_list_backend)) para detalhes adicionais, como configuração de variáveis de ambiente ou dependências específicas.
